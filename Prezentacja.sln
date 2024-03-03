@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dane", "Dane\Dane.csproj", "{21C847CB-C2D7-4807-86D3-A57EF6861C60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logika", "Logika\Logika.csproj", "{C74FC4B1-5AE2-4913-885C-623A9F50C01D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prezentacja", "Prezentacja\Prezentacja.csproj", "{EC452F25-5CF0-49EE-8B4E-640416FB44CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21C847CB-C2D7-4807-86D3-A57EF6861C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C847CB-C2D7-4807-86D3-A57EF6861C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C847CB-C2D7-4807-86D3-A57EF6861C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C847CB-C2D7-4807-86D3-A57EF6861C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C74FC4B1-5AE2-4913-885C-623A9F50C01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C74FC4B1-5AE2-4913-885C-623A9F50C01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C74FC4B1-5AE2-4913-885C-623A9F50C01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C74FC4B1-5AE2-4913-885C-623A9F50C01D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC452F25-5CF0-49EE-8B4E-640416FB44CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC452F25-5CF0-49EE-8B4E-640416FB44CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC452F25-5CF0-49EE-8B4E-640416FB44CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC452F25-5CF0-49EE-8B4E-640416FB44CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B933973-366F-4607-B57A-FBA8B5B35F64}
+	EndGlobalSection
+EndGlobal
