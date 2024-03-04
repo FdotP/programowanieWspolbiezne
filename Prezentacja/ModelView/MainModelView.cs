@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prezentacja.Stores;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,12 @@ namespace Prezentacja.ModelView
 {
     class MainModelView : ViewModelBase
     {
-        public ViewModelBase CurrentViewModel { get;}
-        public MainModelView() { 
-            CurrentViewModel = new amountOfBallViewModel();
+        private readonly NavigationStore _navigationStore;
+
+        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;  
+        public MainModelView(NavigationStore navigationStore) {
+            _navigationStore = navigationStore;
+            
         }
     }
 }
