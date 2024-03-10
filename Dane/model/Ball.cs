@@ -9,14 +9,13 @@ namespace Dane.model
 {
     public  class Ball
     {
-        Vector2 velocity;
+        Vector2 velocity, position;
         float mass;
-        int x, y,radius;
-        public Ball(Vector2 velocity, float mass, int x, int y, int radius) {
+        int radius;
+        public Ball(Vector2 velocity, float mass, Vector2 position, int radius) {
             this.velocity = velocity;
             this.mass = mass;
-            this.x = x;
-            this.y = y;
+            this.position = position;
             this.radius = radius;
         }   
         
