@@ -12,12 +12,32 @@ namespace Dane.model
         Vector2 velocity, position;
         float mass;
         int radius;
-        public Ball(Vector2 velocity, float mass, Vector2 position, int radius) {
+        Board board;
+        public Ball(Vector2 velocity, float mass, Vector2 position, int radius,Board board) {
             this.velocity = velocity;
             this.mass = mass;
             this.position = position;
             this.radius = radius;
-        }   
-        
+            this.board = board;    
+        }
+
+
+        public float X { 
+            get { return position.X; }
+            set { position.X = value; }
+        }
+
+        public float Y
+        {
+            get { return position.Y; }
+            set { position.Y = value; }
+        }
+
+        public int Radius
+        { 
+            get { return radius; }
+            set { radius = value; }
+        }
+
     }
 }

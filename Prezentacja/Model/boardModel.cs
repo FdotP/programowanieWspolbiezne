@@ -10,6 +10,11 @@ namespace Prezentacja.Model
 {
     class boardModel
     {
-        public List<Ball> balls;
+        public Board board;
+        public boardModel(Board board)
+        {
+            this.board = board;
+        }
+
     }
 }

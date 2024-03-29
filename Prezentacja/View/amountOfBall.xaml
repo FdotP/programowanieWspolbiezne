@@ -6,14 +6,18 @@
              xmlns:local="clr-namespace:Prezentacja.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+    <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="453"/>
+            <RowDefinition Height="auto" MinHeight="147"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Margin="0,0,12,181">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
@@ -21,13 +25,14 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
-                
+
             </Grid.ColumnDefinitions>
 
             <TextBlock
                 Grid.Row="0"
                 Grid.Column="0"
-                FontSize="24"
+                FontSize="12
+"
                 Text="Podaj liczbe kul"/>
 
             <TextBox
@@ -35,50 +40,70 @@
                 Grid.Column="1"
                 Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"
                 Width="50"
-                Margin="20 0 0 0"
-                FontSize="24"
+                FontSize="12"
             />
 
             <Button
                 Grid.Row="0"
                 Grid.Column="2"
                 Content="Submit"
-                Margin="20 0 0 0"
                 Width="60"
+                Command="{Binding submitCommand}"
                 />
         </Grid>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Column="0" Grid.ColumnSpan="2" Margin="10,300,590,6" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
+
             </Grid.ColumnDefinitions>
 
             <TextBlock
         Grid.Row="0"
         Grid.Column="0"
-        FontSize="24"
-        Text="Podales:"/>
+        FontSize="12"
+        Text="Podales:" />
 
             <TextBlock
                 Grid.Row="0"
-                Grid.Column="1"
-                FontSize="24"
-                Text="{Binding Amount,UpdateSourceTrigger=PropertyChanged}"/>   
+                FontSize="12"
+                Text="{Binding Amount,UpdateSourceTrigger=PropertyChanged}" Margin="43,0,0,0" />
         </Grid>
 
-        
+        <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+            <ItemsControl x:Name="SpaceObjectsIC"
+                      Grid.Row="0" Grid.Column="0"
+                      ItemsSource="{Binding Path=SampleData , Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Height="600" VerticalAlignment="Top">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas Background="LightGray" Width="800" Height="600" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Ellipse Fill="red" Width="{Binding Radius}" Height="{Binding Radius}">
+                            <Ellipse.RenderTransform>
+                                <TranslateTransform X="{Binding X}" Y="{Binding Y}" />
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+        </Grid>
+
 
 
 
 
     </Grid>
-        
-   
 
-    
+
+
+
 
 </UserControl>

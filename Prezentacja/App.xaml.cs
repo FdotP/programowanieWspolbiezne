@@ -18,7 +18,7 @@ namespace Prezentacja
         }
         protected override void OnStartup(StartupEventArgs e)
         {
-            navigationStore.CurrentViewModel = new amountOfBallViewModel();
+            navigationStore.CurrentViewModel = new amountOfBallViewModel(navigationStore);
             MainWindow = new MainWindow()
             {
                 DataContext = new MainModelView(navigationStore)

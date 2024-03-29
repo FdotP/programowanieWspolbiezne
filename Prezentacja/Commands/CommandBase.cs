@@ -17,6 +17,7 @@ namespace Prezentacja.Commands
         }
 
         public abstract void Execute(object parameter);
+
         protected void OnCanExecutedChanged()
         { 
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
