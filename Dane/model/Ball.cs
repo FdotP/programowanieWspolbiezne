@@ -13,7 +13,7 @@ namespace Dane.model
         float mass;
         int radius;
         Board board;
-        public Ball(Vector2 velocity, float mass, Vector2 position, int radius,Board board) {
+        public Ball(Vector2 velocity, float mass, Vector2 position, int radius, Board board) {
             this.velocity = velocity;
             this.mass = mass;
             this.position = position;
@@ -39,5 +39,8 @@ namespace Dane.model
             set { radius = value; }
         }
 
+        public float X_Velocity { get { return velocity.X; } }
+        public float Y_Velocity { get { return velocity.Y; } }
+        public float Mass { get { return mass; } }
     }
 }

@@ -4,6 +4,7 @@ using Prezentacja.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,10 @@ namespace Prezentacja.ModelView
     {
         Board board;
         BallFunctions ballFunctions = new BallFunctions();
-        ObservableCollection<Ball> sampleData;
+        ObservableCollection<Ball> balls;
         public amountOfBallViewModel(Stores.NavigationStore navigationStore) {
-            sampleData= new ObservableCollection<Ball>();
-            submitCommand = new PassAmountOfBalls(SampleData, this);
+            balls = new ObservableCollection<Ball>();
+            submitCommand = new PassAmountOfBalls(generatedBalls, this);
             board = new Board(amount);
         }
         private int amount;
@@ -37,17 +38,17 @@ namespace Prezentacja.ModelView
         }
 
          
-        public ObservableCollection<Ball> SampleData
+        public ObservableCollection<Ball> generatedBalls
         {
             get
             {
-                return sampleData;
+                return balls;
             }
             set
             {
-                MessageBox.Show("Unable to save file, try again.");
-                sampleData = value;
-                OnPropertyChanged(nameof(SampleData));
+                MessageBox.Show("Unable to...");
+                balls = value;
+                OnPropertyChanged(nameof(generatedBalls));
             }
         }
 

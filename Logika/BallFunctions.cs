@@ -1,6 +1,7 @@
 ﻿using Dane.model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
@@ -22,6 +23,17 @@ namespace Logika
             Vector2 velocity = new Vector2(random.Next(5,10),random.Next(5,10));
             Vector2 position = new Vector2(x, y);
             return new Ball(velocity, mass, position, radius, board);
+        }
+
+        public void Move(Ball ball)
+        {
+            while (ball != null)
+            {
+                ball.X += ball.X_Velocity;
+                ball.Y += ball.Y_Velocity;
+                //Trace.WriteLine($"{ball} : ({ball.X}, {ball.Y})");
+                Thread.Sleep(1000);
+            }
         }
     }
 }
