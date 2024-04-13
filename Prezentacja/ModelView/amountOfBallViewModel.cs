@@ -17,9 +17,9 @@ namespace Prezentacja.ModelView
     {
         Board board;
         BallFunctions ballFunctions = new BallFunctions();
-        ObservableCollection<Ball> balls;
+        ObservableCollection<BallViewModel> balls;
         public amountOfBallViewModel(Stores.NavigationStore navigationStore) {
-            balls = new ObservableCollection<Ball>();
+            balls = new ObservableCollection<BallViewModel>();
             submitCommand = new PassAmountOfBalls(generatedBalls, this);
             board = new Board(amount);
         }
@@ -38,7 +38,7 @@ namespace Prezentacja.ModelView
         }
 
          
-        public ObservableCollection<Ball> generatedBalls
+        public ObservableCollection<BallViewModel> generatedBalls
         {
             get
             {

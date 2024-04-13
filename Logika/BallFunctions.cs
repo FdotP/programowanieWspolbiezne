@@ -20,20 +20,11 @@ namespace Logika
             float x = random.Next(radius+10, 800-radius);
             float y = random.Next(radius + 10, 600-radius);
             int mass = random.Next(10, 100);
-            Vector2 velocity = new Vector2(random.Next(5,10),random.Next(5,10));
+            Vector2 velocity = new Vector2((float)((random.NextDouble()*4)-2), (float)(random.NextDouble() * 4) - 2);
             Vector2 position = new Vector2(x, y);
             return new Ball(velocity, mass, position, radius, board);
         }
 
-        public void Move(Ball ball)
-        {
-            while (ball != null)
-            {
-                ball.X += ball.X_Velocity;
-                ball.Y += ball.Y_Velocity;
-                //Trace.WriteLine($"{ball} : ({ball.X}, {ball.Y})");
-                Thread.Sleep(1000);
-            }
-        }
+        
     }
 }

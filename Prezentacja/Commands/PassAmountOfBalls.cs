@@ -14,11 +14,11 @@ namespace Prezentacja.Commands
 {
     internal class PassAmountOfBalls : CommandBase
     {
-        private ObservableCollection<Ball>? balls;
+        private ObservableCollection<BallViewModel>? balls;
         private amountOfBallViewModel? viewModel;
         public BallFunctions bf = new BallFunctions();
 
-        public PassAmountOfBalls(ObservableCollection<Ball>? balls, amountOfBallViewModel am)
+        public PassAmountOfBalls(ObservableCollection<BallViewModel>? balls, amountOfBallViewModel am)
         {
             this.balls = balls;
             this.viewModel = am;
@@ -32,26 +32,15 @@ namespace Prezentacja.Commands
             Trace.WriteLine("Generating balls...");
             for (int i = 0; i < viewModel.Amount; i++)
             {
-                balls.Add(bf.generateBalls(board));
+                this.balls.Add(new BallViewModel(bf.generateBalls(board)));
             }
 
-            foreach (Ball ball in balls)
+            foreach (BallViewModel ball in this.balls)
             {
-                Thread tBallMovement = new Thread(() => bf.Move(ball));
+                Thread tBallMovement = new Thread(() => ball.Move());
                 tBallMovement.Start();
             }
 
-            Task.Run(() =>
-            {
-                while (true)
-                {
-                    foreach (Ball ball in balls)
-                    {
-                        Trace.WriteLine($"Ball {ball}: ({ball.X}, {ball.Y})");
-                    }
-                    Thread.Sleep(1000);
-                }
-            });
         }
     }
 }

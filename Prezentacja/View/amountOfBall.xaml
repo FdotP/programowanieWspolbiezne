@@ -87,8 +87,8 @@
                     <DataTemplate>
                         <Ellipse Fill="red" Width="{Binding Radius}" Height="{Binding Radius}">
                             <Ellipse.RenderTransform>
-                                <TranslateTransform X="{Binding X, UpdateSourceTrigger=PropertyChanged, NotifyOnTargetUpdated=True}" 
-                                                    Y="{Binding Y, UpdateSourceTrigger=PropertyChanged, NotifyOnTargetUpdated=True}" />
+                                <TranslateTransform X="{Binding XLocation, UpdateSourceTrigger=PropertyChanged, NotifyOnTargetUpdated=True}" 
+                                                    Y="{Binding YLocation, UpdateSourceTrigger=PropertyChanged, NotifyOnTargetUpdated=True}" />
                             </Ellipse.RenderTransform>
                         </Ellipse>
                     </DataTemplate>
