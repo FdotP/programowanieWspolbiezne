@@ -80,12 +80,12 @@
                       ItemsSource="{Binding Path=generatedBalls , Mode=OneWay, UpdateSourceTrigger=PropertyChanged, NotifyOnTargetUpdated=True}" Height="600" VerticalAlignment="Top">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <Canvas Background="LightGray" Width="800" Height="600" />
+                        <Canvas Background="LightGray" Width="800" Height="600" Margin="0,10,0,0" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Ellipse Fill="red" Width="{Binding Radius}" Height="{Binding Radius}">
+                        <Ellipse Fill="red" Width="{Binding Diameter}" Height="{Binding Diameter}">
                             <Ellipse.RenderTransform>
                                 <TranslateTransform X="{Binding XLocation, UpdateSourceTrigger=PropertyChanged, NotifyOnTargetUpdated=True}" 
                                                     Y="{Binding YLocation, UpdateSourceTrigger=PropertyChanged, NotifyOnTargetUpdated=True}" />
