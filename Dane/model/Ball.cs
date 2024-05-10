@@ -42,5 +42,11 @@ namespace Dane.model
         public float X_Velocity { get { return velocity.X; } }
         public float Y_Velocity { get { return velocity.Y; } }
         public float Mass { get { return mass; } }
+
+        public Vector2 velocityVector
+        {
+            get { return velocity; } 
+            set { velocity = value; }
+        }
     }
 }

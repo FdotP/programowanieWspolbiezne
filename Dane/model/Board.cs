@@ -8,6 +8,9 @@ namespace Dane.model
 {
     public class Board
     {
+        public readonly int width = 800;
+        public readonly int height = 600;
+
         public Ball[] balls;
         public Board(int size) { 
             balls = new Ball[size];
