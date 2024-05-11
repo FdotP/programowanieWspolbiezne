@@ -17,10 +17,11 @@ namespace Logika
         { 
             Random random = new Random();
             int radius = random.Next(10, 20);
-            float x = random.Next(radius+10, 800-radius);
-            float y = random.Next(radius + 10, 600-radius);
-            int mass = random.Next(10, 100);
-            Vector2 velocity = new Vector2((float)((random.NextDouble()*4)-2), (float)(random.NextDouble() * 4) - 2);
+            float x = random.Next(radius + 10, 760 - radius);
+            float y = random.Next(radius + 10, 560 - radius);
+            //int mass = random.Next(10, 100);
+            int mass = radius * 2;
+            Vector2 velocity = new Vector2((float)((random.NextDouble()*6)-3), (float)(random.NextDouble() * 6) - 3);
             Vector2 position = new Vector2(x, y);
             return new Ball(velocity, mass, position, radius, board);
         }
