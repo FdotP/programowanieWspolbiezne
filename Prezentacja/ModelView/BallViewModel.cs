@@ -20,7 +20,6 @@ namespace Prezentacja.ModelView
         private float diameter;
         private List<BallViewModel> _otherBalls;
         static readonly object locker = new object();
-        readonly object instanceLocker = new object();
 
         public List<BallViewModel> OtherBalls { get { return _otherBalls; } set { _otherBalls = value; } }
 
@@ -34,16 +33,7 @@ namespace Prezentacja.ModelView
             this.yLocation = ball.Y;
             this.radius = ball.Radius;
             this.diameter = ball.Diameter;
-            
-            /*  TODO
-                - naprawic odbijanie sie kulek bo czasem wpadaja w zaiwrowania xd
-                - jakies sekcje krytyczne czy cos moze???
-             */
-        }
 
-        private void printPos()
-        {
-            Trace.WriteLine("X: " + this.XLocation + ", Y: " + this.YLocation);
         }
 
         private void checkWallCollision()
@@ -55,8 +45,9 @@ namespace Prezentacja.ModelView
             float newY = this.YLocation + ballProperty.Y_Velocity;
 
             // XLocation and YLocation mark the top-left corner of ball)
-            // Checking X position (left and right walls collision)
             // Math.Clamp() tries to prevent balls from beeing "sucked" into the walls
+            
+            // Checking X position (left and right walls collision)
             if (this.XLocation + this.ballProperty.Diameter >= 800 || this.XLocation <= 0)
             {  
                 newVelocity.X = -ballProperty.X_Velocity;
@@ -74,46 +65,11 @@ namespace Prezentacja.ModelView
 
         }
 
-        private void checkBallCollisionVector2D()
-        {
 
-            foreach (BallViewModel ball in this._otherBalls)
-            {
-                //lock (ball)??(this)??(locker)???
-                lock (locker) { 
-                    Vector2 currentBallPosition = new Vector2(this.XLocation, this.YLocation);
-                    Vector2 otherBallPosition = new Vector2(ball.XLocation, ball.YLocation);
-                    Vector2 distanceVector = otherBallPosition - currentBallPosition;
-                    float distance = distanceVector.Length();
-                    if (distance <= (ball.Radius + this.Radius) && distance > 0)
-                    {
-                        //Trace.WriteLine("Balls collided");
-                        Vector2 collisionVector1 = otherBallPosition - currentBallPosition;
-                        //collisionVector.Normalize();
-                        Vector2 collisionVector = Vector2.Normalize(collisionVector1);
-
-                        float initialVelocity1 = Vector2.Dot(this.ballProperty.velocityVector, collisionVector);
-                        float initialVelocity2 = Vector2.Dot(ball.ballProperty.velocityVector, collisionVector);
-
-                        float finalVelocity1 = (initialVelocity1 * (this.ballProperty.Mass - ball.ballProperty.Mass)
-                            + 2 * ball.ballProperty.Mass * initialVelocity2) / (this.ballProperty.Mass + ball.ballProperty.Mass);
-                        float finalVelocity2 = (initialVelocity2 * (ball.ballProperty.Mass - this.ballProperty.Mass)
-                            + 2 * this.ballProperty.Mass * initialVelocity1) / (this.ballProperty.Mass + ball.ballProperty.Mass);
-
-                        this.ballProperty.velocityVector += (finalVelocity1 - initialVelocity1) * collisionVector;
-                        ball.ballProperty.velocityVector += (finalVelocity2 - initialVelocity2) * collisionVector;
-                    }
-
-                }
-            }
-
-        }
-
-        public void ResolveCollision()
+        public void checkBallsCollision()
         {
             foreach (BallViewModel ball in this._otherBalls)
             {
-                //lock (ball)??(this)??(locker)???
                 lock (locker)
                 {
                     Vector2 currentBallPosition = new Vector2(this.XLocation, this.YLocation);
@@ -150,6 +106,8 @@ namespace Prezentacja.ModelView
         }
 
 
+        // method executed asynchronously for each object
+        // single task (thread) for every object
         public void Move()
         {
             while (this != null)
@@ -157,9 +115,7 @@ namespace Prezentacja.ModelView
                 this.XLocation += ballProperty.X_Velocity;
                 this.YLocation += ballProperty.Y_Velocity;
                 checkWallCollision();
-                //checkBallCollision();
-                //checkBallCollisionVector2D();
-                ResolveCollision();
+                checkBallsCollision();
                 Thread.Sleep(10);
             }
 

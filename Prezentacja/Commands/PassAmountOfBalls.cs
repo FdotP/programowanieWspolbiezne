@@ -37,6 +37,7 @@ namespace Prezentacja.Commands
                 this.balls.Add(new BallViewModel(bf.generateBalls(board)));
             }
 
+            // Dict for every ball containing references to the other balls
             Dictionary<BallViewModel, List<BallViewModel>> ballsWithoutSelf = new Dictionary<BallViewModel, List<BallViewModel>>();
             foreach (BallViewModel ball in balls)
             {
@@ -46,9 +47,19 @@ namespace Prezentacja.Commands
             
             foreach (BallViewModel ball in this.balls)
             {
+                // Setting list of references to the other balls
                 ball.OtherBalls = ballsWithoutSelf[ball];
-                Thread tBallMovement = new Thread(() => ball.Move());
-                tBallMovement.Start();
+
+                //Thread tBallMovement = new Thread(() =>
+                //{
+                //    ball.Move();
+                //})
+                //{
+                //    Name = "ball" + ball.GetHashCode()
+                //};
+                //tBallMovement.Start();
+
+                Task simulation = Task.Run(() => { ball.Move(); });
             }
 
         }
