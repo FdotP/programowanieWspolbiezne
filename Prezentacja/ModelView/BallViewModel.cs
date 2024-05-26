@@ -6,6 +6,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 
 namespace Prezentacja.ModelView
@@ -116,11 +117,12 @@ namespace Prezentacja.ModelView
                 this.YLocation += ballProperty.Y_Velocity;
                 checkWallCollision();
                 checkBallsCollision();
-                Thread.Sleep(10);
+                Thread.Sleep(20);
             }
 
         }
 
+       
 
         public float XLocation
         {

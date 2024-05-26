@@ -7,8 +7,9 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows;
+
 
 namespace Prezentacja.Commands
 {
@@ -17,6 +18,7 @@ namespace Prezentacja.Commands
         private ObservableCollection<BallViewModel>? balls;
         private amountOfBallViewModel? viewModel;
         public BallFunctions bf = new BallFunctions();
+
 
         public PassAmountOfBalls(ObservableCollection<BallViewModel>? balls, amountOfBallViewModel am)
         {
@@ -44,24 +46,18 @@ namespace Prezentacja.Commands
                 List<BallViewModel> otherBalls = balls.Where(b => b != ball).ToList();
                 ballsWithoutSelf[ball] = otherBalls;
             }
-            
+
             foreach (BallViewModel ball in this.balls)
             {
-                // Setting list of references to the other balls
+
                 ball.OtherBalls = ballsWithoutSelf[ball];
-
-                //Thread tBallMovement = new Thread(() =>
-                //{
-                //    ball.Move();
-                //})
-                //{
-                //    Name = "ball" + ball.GetHashCode()
-                //};
-                //tBallMovement.Start();
-
                 Task simulation = Task.Run(() => { ball.Move(); });
+                Thread.Sleep(10);
+
             }
+
 
         }
     }
+       
 }

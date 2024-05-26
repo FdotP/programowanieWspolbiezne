@@ -1,0 +1,92 @@
+logs
+05.21.2024 12:23:14.602 PM
+x location: 401,95996, y location: 535,01135 8059334
+x location: 327,93854, y location: 172,62732 5425146
+x location: 115,41474, y location: 488,76904 48826322
+x location: 643,1162, y location: 343,9668 36783718
+x location: 298,80054, y location: 47,727356 62618006
+x location: 343,40143, y location: 375,575 26691149
+05.21.2024 12:23:16.602 PM
+x location: 657,9912, y location: 113,89108 8059334
+x location: 725,0609, y location: 559,249 5425146
+x location: 236,68214, y location: 389,99756 48826322
+x location: 454,498, y location: 82,32083 36783718
+x location: 207,2538, y location: 214,75227 62618006
+x location: 145,27795, y location: 125,52162 26691149
+05.21.2024 12:23:18.604 PM
+x location: 162,30273, y location: 389,42395 8059334
+x location: 224,3807, y location: 197,5874 5425146
+x location: 591,70605, y location: 291,22607 48826322
+x location: 263,89838, y location: 179,02122 36783718
+x location: 717,41785, y location: 479,0628 62618006
+x location: 52,13738, y location: 123,7101 26691149
+05.21.2024 12:23:20.603 PM
+x location: 328,71964, y location: 263,2589 8059334
+x location: 265,98514, y location: 183,13658 5425146
+x location: 605,5846, y location: 193,4816 48826322
+x location: 75,28418, y location: 440,66635 36783718
+x location: 336,92065, y location: 418,3138 62618006
+x location: 250,2603, y location: 373,76346 26691149
+05.21.2024 12:23:22.611 PM
+x location: 778, y location: 197,37888 8059334
+x location: 719,72675, y location: 537,2006 5425146
+x location: 283,84436, y location: 103,96764 48826322
+x location: 95,29981, y location: 469,3423 36783718
+x location: 525,89655, y location: 139,1016 62618006
+x location: 10,965673, y location: 508,36142 26691149
+05.21.2024 12:23:24.612 PM
+x location: 402,3203, y location: 578 8059334
+x location: 453,858, y location: 319,67847 5425146
+x location: 17,576843, y location: 29,887932 48826322
+x location: 248,41371, y location: 245,53137 36783718
+x location: 744,4805, y location: 91,33527 62618006
+x location: 266,15866, y location: 313,70322 26691149
+05.21.2024 12:23:26.604 PM
+x location: 42,29398, y location: 209,91324 8059334
+x location: 275,13754, y location: 12,573626 5425146
+x location: 93,74281, y location: 23,545914 48826322
+x location: 408,7848, y location: 0 36783718
+x location: 604,95435, y location: 316,4109 62618006
+x location: 463,45975, y location: 234,64204 26691149
+05.21.2024 12:23:28.609 PM
+x location: 313,0663, y location: 154,70236 8059334
+x location: 614,789, y location: 93,50547 5425146
+x location: 284,81436, y location: 255,64171 48826322
+x location: 569,1559, y location: 248,71416 36783718
+x location: 395,47568, y location: 541,4863 62618006
+x location: 645,04803, y location: 190,15044 26691149
+05.21.2024 12:23:30.610 PM
+x location: 724,2074, y location: 487,4519 8059334
+x location: 767,09033, y location: 15,647247 5425146
+x location: 654,4369, y location: 535,56805 48826322
+x location: 742,027, y location: 514,2868 36783718
+x location: 176,8873, y location: 382,28223 62618006
+x location: 664,01044, y location: 305,53583 26691149
+05.21.2024 12:23:32.607 PM
+x location: 568,6841, y location: 566,01855 8059334
+x location: 733,2136, y location: 229,02135 5425146
+x location: 608,1804, y location: 69,38066 48826322
+x location: 663,4071, y location: 503,72815 36783718
+x location: 30,35941, y location: 157,20679 62618006
+x location: 518,7668, y location: 568 26691149
+05.21.2024 12:23:34.608 PM
+x location: 297,34525, y location: 461,17883 8059334
+x location: 698,84595, y location: 479,5117 5425146
+x location: 402,36133, y location: 499,61987 48826322
+x location: 535,6448, y location: 474,985 36783718
+x location: 242,87549, y location: 68,50143 62618006
+x location: 371,41406, y location: 298,5017 26691149
+05.21.2024 12:23:36.604 PM
+x location: 20,728668, y location: 351,50854 8059334
+x location: 663,49634, y location: 410,96964 5425146
+x location: 83,03524, y location: 244,3884 48826322
+x location: 707,761, y location: 504,81723 36783718
+x location: 461,46387, y location: 303,36304 62618006
+x location: 219,85161, y location: 21,30524 26691149
+05.21.2024 12:23:38.612 PM
+x location: 246,59642, y location: 240,83136 8059334
+x location: 628,6377, y location: 156,90024 5425146
+x location: 574,32733, y location: 151,88356 48826322
+x location: 673,5989, y location: 335,44254 36783718
+x location: 677,013, y location: 534,9624 62618006
+x location: 70,39583, y location: 246,3966 26691149
